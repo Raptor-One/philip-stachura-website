@@ -1,0 +1,162 @@
+@font-face {
+    font-family: "Segoe UI Bold";
+    src: url(fonts/segoeuib.ttf);
+}
+
+@font-face {
+    font-family: "Segoe UI";
+    src: url(fonts/segoeui.ttf);
+}
+
+
+body {
+
+    font-family: "Segoe UI";
+    background-color: #fefefe;
+    margin: 0px;
+}
+
+.portrait {
+    width: 450px;
+    position: absolute;
+    left: 250px;
+    top: -200px;
+
+}
+
+
+.subheader {
+	color: #fefefe;
+	background-color: #6690C0;
+	margin-bottom: 5px;
+	padding-top: 0px;
+	padding-bottom: 5px;
+}
+
+
+div {
+	text-align:center;
+}
+
+table, td, tr {
+	text-align:center;
+	vertical-align: top;
+}
+
+hr {
+
+    color: #555;
+    background-color: #555;
+    height: 1px;
+    display: none;
+    width: 0%;
+}
+
+h1, h2 {
+
+    font-family: "Segoe UI Bold";
+}
+
+p {
+    font-size: 18px;
+    font-weight: 500;
+    color: #777;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding-bottom: 10px;
+
+}
+
+.maintable {
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+.switchimg {
+
+    position: absolute;
+    opacity: 0;
+}
+
+.gradient {
+    position: absolute;
+    height: 280px;
+}
+
+.left {
+    left: 54px;
+}
+
+.right {
+    right: 54px;
+}
+
+.subtable {
+    padding: 0px;
+}
+
+.full {
+    width: 960px;
+}
+
+.two-thirds {
+    width: 640px;
+}
+
+.half {
+    width: 470px;
+}
+
+.third {
+    width: 320px;
+}
+
+.subtable tr td  {
+
+	width: 152px;
+
+}
+
+.subdiv {
+
+	background-color: #eee;
+	width:960px;
+	position: relative;
+}
+
+.title {
+    font-size: 60px;
+}
+
+
+.scrollable {
+    overflow: hidden;
+    width: 846px;
+    height: 280px;
+}
+
+.scrollablepane {
+    overflow-x: auto;
+
+}
+
+.scrollimg {
+
+    padding-top: 175px;
+    width: 50px;
+
+}
+
+.scrolltable {
+    padding-top: 0px;
+    padding-left: 25px;
+    padding-right: 25px;
+
+}
+
+#expdlso {
+
+    margin-left: 235px;
+    margin-right: 235px;
+}
+
