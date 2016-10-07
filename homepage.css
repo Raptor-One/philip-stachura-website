@@ -1,17 +1,8 @@
-@font-face {
-    font-family: "Segoe UI Bold";
-    src: url(fonts/segoeuib.ttf);
-}
-
-@font-face {
-    font-family: "Segoe UI";
-    src: url(fonts/segoeui.ttf);
-}
-
+@import 'https://fonts.googleapis.com/css?family=Open+Sans:400,700';
 
 body {
 
-    font-family: "Segoe UI";
+    font-family: 'Open Sans', sans-serif;
     background-color: #fefefe;
     margin: 0px;
 }
@@ -54,7 +45,8 @@ hr {
 
 h1, h2 {
 
-    font-family: "Segoe UI Bold";
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
 }
 
 p {
