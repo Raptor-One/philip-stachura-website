@@ -39,20 +39,37 @@ document.addEventListener('keydown', function(e) {
     konamiCodePosition++;
 
     // if the last key is reached, activate cheats
-    if (konamiCodePosition == konamiCode.length)
-      activateCheats();
+    if (konamiCodePosition == konamiCode.length){
+        document.body.style.backgroundImage = "url('http://www.lovethisgif.com/uploaded_images/91924-Description-This-Is-A-Simple-Layout-Showing-The-Matrix-Code-Moving-....gif')";
+
+         alert("Welcome to the matrix...");
+         cheatsOn = 8472;
+         }
   } else
     konamiCodePosition = 0;
 });
-
-function activateCheats() {
-  document.body.style.backgroundImage = "url('http://www.lovethisgif.com/uploaded_images/91924-Description-This-Is-A-Simple-Layout-Showing-The-Matrix-Code-Moving-....gif')";
-
-   alert("Welcome to the matrix...");
-   cheatsOn = 8472;
-}
 
 function gone(elem)
 {
     elem.style.display = "none";
 }
+
+function operation(s)
+{
+    if(s.hashCode() == -1247761913)
+    {
+        alert("Bonjour");
+    }
+}
+
+String.prototype.hashCode = function() {
+  var hash = 0, i, chr, len;
+  if (this.length === 0) return hash;
+  for (i = 0, len = this.length; i < len; i++) {
+    chr   = this.charCodeAt(i);
+    hash  = ((hash << 5) - hash) + chr;
+    hash |= 0;
+  }
+  return hash;
+};
+
