@@ -10,7 +10,7 @@ $(document).ready(function(){
 });
 var salty = new String();
 
-var cheatsOn = 0;
+var cheatsOn = '';
 
 function gone(elem)
 {
