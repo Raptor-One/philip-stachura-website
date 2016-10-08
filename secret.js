@@ -8,6 +8,7 @@ $(document).ready(function(){
     })
 
 });
+var salty = new String();
 // a key map of allowed keys
 var allowedKeys = {
   37: 'left',
@@ -59,6 +60,28 @@ function operation(s)
     if(s.hashCode() == -1247761913)
     {
         alert("Bonjour");
+    }
+    else if(s.hashCode() == -2141031506)
+    {
+        salty = s;
+        alert("Salt, rains from above!");
+    }
+}
+
+document.onclick = function() {
+    if(salty.hashCode() == -2141031506)
+    {
+        var img = document.createElement('img');
+        img.src = 'https://openclipart.org/image/800px/svg_to_png/244723/salt-shaker-jh.png';
+        img.width = 50;
+        document.body.appendChild(img);
+        var x = event.clientX;
+        var y = event.clientY;
+        var snowball = document.getElementById("snowballAppear");
+        img.style.display = 'block';
+        img.style.position = 'absolute';
+        img.style.left = x + $(window).scrollLeft() + 'px';
+        img.style.top = y + $(window).scrollTop() + 'px';
     }
 }
 
