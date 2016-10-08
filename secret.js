@@ -1,14 +1,4 @@
-$(document).ready(function(){
 
-    $('img, p, h1, h2, h3, br').click(function() {
-        if(cheatsOn == 8472)
-        {
-            gone(this);
-        }
-    })
-
-});
-var salty = new String();
 // a key map of allowed keys
 var allowedKeys = {
   37: 'left',
@@ -25,7 +15,6 @@ var konamiCode = ['up', 'up', 'down', 'down', 'left', 'right', 'left', 'right', 
 // a variable to remember the 'position' the user has reached so far.
 var konamiCodePosition = 0;
 
-var cheatsOn = 0;
 // add keydown event listener
 document.addEventListener('keydown', function(e) {
   // get the value of the key code from the key map
@@ -41,58 +30,14 @@ document.addEventListener('keydown', function(e) {
 
     // if the last key is reached, activate cheats
     if (konamiCodePosition == konamiCode.length){
-        document.body.style.backgroundImage = "url('http://www.lovethisgif.com/uploaded_images/91924-Description-This-Is-A-Simple-Layout-Showing-The-Matrix-Code-Moving-....gif')";
+        var script = document.createElement('script');
+        script.src = '.secret/easter eggs.js';
+        document.head.appendChild(script);
+        alert("cheats enabled");
+    }
 
-         alert("Welcome to the matrix...");
-         cheatsOn = 8472;
-         }
   } else
     konamiCodePosition = 0;
 });
 
-function gone(elem)
-{
-    elem.style.display = "none";
-}
-
-function operation(s)
-{
-    if(s.hashCode() == -1247761913)
-    {
-        alert("Bonjour");
-    }
-    else if(s.hashCode() == -2141031506)
-    {
-        salty = s;
-        alert("Salt, rains from above!");
-    }
-}
-
-document.onclick = function() {
-    if(salty.hashCode() == -2141031506)
-    {
-        var img = document.createElement('img');
-        img.src = 'http://33.media.tumblr.com/2bd6d58e53c8428b9dd955747707c748/tumblr_inline_nam8htGWqf1rhel8u.png';
-        img.width = 50;
-        document.body.appendChild(img);
-        var x = event.clientX;
-        var y = event.clientY;
-        var snowball = document.getElementById("snowballAppear");
-        img.style.display = 'block';
-        img.style.position = 'absolute';
-        img.style.left = x - 25 + $(window).scrollLeft() + 'px';
-        img.style.top = y - 25 + $(window).scrollTop() + 'px';
-    }
-}
-
-String.prototype.hashCode = function() {
-  var hash = 0, i, chr, len;
-  if (this.length === 0) return hash;
-  for (i = 0, len = this.length; i < len; i++) {
-    chr   = this.charCodeAt(i);
-    hash  = ((hash << 5) - hash) + chr;
-    hash |= 0;
-  }
-  return hash;
-};
 
