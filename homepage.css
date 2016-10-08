@@ -76,11 +76,11 @@ p {
 }
 
 .left {
-    left: 54px;
+    padding-left: 50px;
 }
 
 .right {
-    right: 54px;
+    padding-right: 50px;
 }
 
 .subtable {
@@ -127,23 +127,18 @@ p {
     height: 280px;
 }
 
-.scrollablepane {
-    overflow-x: auto;
-
+.radialdiv {
+    position: absolute;
+    width: 414px;
+    height: 255px;
 }
 
-.scrollimg {
-
-    padding-top: 175px;
-    width: 50px;
-
+.radialleft {
+    padding-right: 7px;
 }
 
-.scrolltable {
-    padding-top: 0px;
-    padding-left: 25px;
-    padding-right: 25px;
-
+.radialright {
+    padding-left: 7px;
 }
 
 #expdlso {
