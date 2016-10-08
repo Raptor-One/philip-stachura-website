@@ -72,7 +72,7 @@ document.onclick = function() {
     if(salty.hashCode() == -2141031506)
     {
         var img = document.createElement('img');
-        img.src = 'https://openclipart.org/image/800px/svg_to_png/244723/salt-shaker-jh.png';
+        img.src = 'http://33.media.tumblr.com/2bd6d58e53c8428b9dd955747707c748/tumblr_inline_nam8htGWqf1rhel8u.png';
         img.width = 50;
         document.body.appendChild(img);
         var x = event.clientX;
@@ -80,8 +80,8 @@ document.onclick = function() {
         var snowball = document.getElementById("snowballAppear");
         img.style.display = 'block';
         img.style.position = 'absolute';
-        img.style.left = x + $(window).scrollLeft() + 'px';
-        img.style.top = y + $(window).scrollTop() + 'px';
+        img.style.left = x - 25 + $(window).scrollLeft() + 'px';
+        img.style.top = y - 25 + $(window).scrollTop() + 'px';
     }
 }
 
