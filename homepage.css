@@ -49,8 +49,7 @@ h1, h2 {
     font-weight: bold;
 }
 
-h6 {
-    display: block;
+p {
     font-size: 1em;
     font-weight: normal;
     color: #777;
