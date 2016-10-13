@@ -25,9 +25,10 @@ function operation(s)
     }
     else if(s.hashCode() == 1720023)
     {
+        loop(s);
         alert("Congrats, you found this one... \n"
         + "I don't really know what to say... \n"
-        + "Have fun!");
+        + "So have fun!");
 
     }
 }
@@ -45,6 +46,27 @@ function activate(s)
          cheatsOn = s;
          alert("Welcome to the matrix...");
      }
+}
+
+function loop(s) {
+
+    if(s.hashCode() == 1720023)
+    {
+        var img = document.createElement('img');
+        img.src = 'images/undineship.png';
+        img.width = 50;
+        document.body.appendChild(img);
+        var snowball = document.getElementById("snowballAppear");
+        img.style.display = 'block';
+        img.style.position = 'absolute';
+
+        img.style.left = 25 + $(window).scrollLeft() + 'px';
+        img.style.top = 25 + $(window).scrollTop() + 'px';
+
+
+    }
+
+
 }
 
 document.onclick = function() {
