@@ -23,22 +23,28 @@ function operation(s)
     {
         alert("Bonjour");
     }
-    else if(s.hashCode() == -2141031506)
-    {
-        salty = s;
-        alert("Salt, rains from above!");
-    }
-    else if(s.hashCode() == -1081239615)
-    {
-        document.body.style.backgroundImage = "url('http://www.lovethisgif.com/uploaded_images/91924-Description-This-Is-A-Simple-Layout-Showing-The-Matrix-Code-Moving-....gif')";
-        cheatsOn = s;
-        alert("Welcome to the matrix...");
-    }
     else if(s.hashCode() == 1720023)
     {
-        alert("still working on this one...");
+        alert("Congrats, you found this one... \n"
+        + "I don't really know what to say... \n"
+        + "Have fun!");
 
     }
+}
+
+function activate(s)
+{
+     if(s.hashCode() == -2141031506)
+     {
+         salty = s;
+         alert("Salt, rains from above!");
+     }
+     else if(s.hashCode() == -1081239615)
+     {
+         document.body.style.backgroundImage = "url('http://www.lovethisgif.com/uploaded_images/91924-Description-This-Is-A-Simple-Layout-Showing-The-Matrix-Code-Moving-....gif')";
+         cheatsOn = s;
+         alert("Welcome to the matrix...");
+     }
 }
 
 document.onclick = function() {
