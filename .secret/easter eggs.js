@@ -68,6 +68,7 @@ function loop(s) {
         document.body.appendChild(img);
         img.style.display = 'block';
         img.style.position = 'absolute';
+        document.body.style.marginTop = 0 +'px';
         img.style.zIndex = 100;
 
         img.style.left = 100 + 'px';
@@ -77,7 +78,7 @@ function loop(s) {
         var svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
         svg.setAttribute('width', 100 + "%");
         svg.setAttribute('height', 100 + "%");
-        svg.style.position = "absolute";
+        svg.style.position = "fixed";
         svg.id = "svg";
         svg.style.zIndex = 99;
         document.body.insertBefore(svg, document.getElementById("firstElement"));
@@ -101,44 +102,59 @@ function loop(s) {
                 line.remove();
                 lineWidth = 3;
                 step += 1;
-                console.log(step +"");
-                if(step < 500)
+                if(step < 250)
                 {
                     lineWidth = 3;
+                }
+                else if(step < 500)
+                {
+                    lineWidth = 4;
+                }
+                else if(step < 750)
+                {
+                    lineWidth = 5;
                 }
                 else if(step < 1000)
                 {
-                    lineWidth = 4;
+                    lineWidth = 6;
                 }
-                else if(step < 2500)
+                else if(step < 1500)
                 {
-                    lineWidth = 5;
+                    lineWidth = 7;
                 }
-                else if(step < 3000)
+                else if(step < 2000)
+                {
+                    lineWidth = 8;
+                }
+                else if(step < 5000)
+                {
+                    lineWidth = 7;
+                }
+                else if(step < 5100)
                 {
                     lineWidth = 6;
                 }
-                else if(step < 7000)
+                else if(step < 5200)
                 {
                     lineWidth = 5;
                 }
-                else if(step < 7250)
+                else if(step < 5300)
                 {
                     lineWidth = 4;
                 }
-                else if(step < 7500)
+                else if(step < 5400)
                 {
                     lineWidth = 3;
                 }
-                else if(step < 7750)
+                else if(step < 5550)
                 {
                     lineWidth = 2;
                 }
-                else if(step < 8000)
+                else if(step < 5700)
                 {
                     lineWidth = 1;
                 }
-                else if(step < 8500)
+                else if(step < 5800)
                 {
                     lineWidth = 0;
                     line.remove();
@@ -171,15 +187,14 @@ function loop(s) {
                 img.style.transform = "rotate(" + angle + "deg)";
             }
 
-            if(mouseDown && step < 8500)
+            if(mouseDown && step < 5800)
             {
-                var xClick = x;
-                var yClick = y;
+
                 line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
-                line.setAttribute('x1', parseFloat(trimString(img.style.left), 10) + 100);
-                line.setAttribute('y1', parseFloat(trimString(img.style.top), 10) + 100);
-                line.setAttribute('x2', xClick + $(window).scrollLeft());
-                line.setAttribute('y2', yClick + $(window).scrollTop());
+                line.setAttribute('x1', parseFloat(trimString(img.style.left), 10) + 100 - $(window).scrollLeft());
+                line.setAttribute('y1', parseFloat(trimString(img.style.top), 10) + 100 - $(window).scrollTop());
+                line.setAttribute('x2', x );
+                line.setAttribute('y2', y );
                 line.setAttribute('stroke', "rgb(255,210,30)");
                 line.setAttribute('stroke-width', lineWidth);
                 document.getElementById("svg").appendChild(line);
@@ -193,8 +208,8 @@ function loop(s) {
                 yMove = parseFloat(trimString(img.style.top), 10) + (((((d.getTime() - prevTime)/1000.0) * speed) * yRatio) * yNeg);
 
 
-                img.style.left = xMove + 'px'
-                img.style.top = yMove + 'px'
+                img.style.left = xMove + $(window).scrollLeft() + 'px'
+                img.style.top = yMove + $(window).scrollLeft() + 'px'
 
             }
 
