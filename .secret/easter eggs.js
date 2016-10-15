@@ -196,7 +196,15 @@ function loop(s) {
                 line.setAttribute('y1', parseFloat(trimString(img.style.top), 10) + 100 - $(window).scrollTop());
                 line.setAttribute('x2', x );
                 line.setAttribute('y2', y );
-                line.setAttribute('stroke', "rgb(255,210,30)");
+                if(Math.floor(step/10) & 1)
+                {
+                    line.setAttribute('stroke', "rgb(255,210,30)");
+                }
+                else
+                {
+                    line.setAttribute('stroke', "rgb(255,225,15)");
+                }
+
                 line.setAttribute('stroke-width', lineWidth);
                 document.getElementById("svg").appendChild(line);
 
