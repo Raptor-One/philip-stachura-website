@@ -1,7 +1,7 @@
 $(document).ready(function(){
 
     $('img, p, h1, h2, h3, br').click(function() {
-        if(cheatsOn.hashCode() == -1081239615)
+        if(cheatsOn.hashCode() == -1997372447)
         {
             gone(this);
         }
@@ -32,15 +32,14 @@ function operation(s)
 
     }
 }
-
 function activate(s)
 {
-     if(s.hashCode() == -2141031506)
+     if(s.hashCode() == 69481810)
      {
          salty = s;
          alert("Salt, rains from above!");
      }
-     else if(s.hashCode() == -1081239615)
+     else if(s.hashCode() == -1997372447)
      {
          document.body.style.backgroundImage = "url('http://www.lovethisgif.com/uploaded_images/91924-Description-This-Is-A-Simple-Layout-Showing-The-Matrix-Code-Moving-....gif')";
          cheatsOn = s;
@@ -249,7 +248,7 @@ function loop(s) {
 }
 
 document.onclick = function() {
-    if(salty.hashCode() == -2141031506)
+    if(salty.hashCode() == 69481810)
     {
         var img = document.createElement('img');
         img.src = 'http://33.media.tumblr.com/2bd6d58e53c8428b9dd955747707c748/tumblr_inline_nam8htGWqf1rhel8u.png';
