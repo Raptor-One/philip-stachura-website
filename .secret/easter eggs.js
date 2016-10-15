@@ -60,6 +60,7 @@ function loop(s) {
         document.body.onmouseup = function() {
           --mouseDown;
         }
+        document.getElementsByTagName("body")[0].style.cursor = "url('http://www.rw-designer.com/cursor-extern.php?id=94071'), auto";
         var x;
         var y;
         var img = document.createElement('img');
@@ -81,6 +82,7 @@ function loop(s) {
         svg.style.position = "fixed";
         svg.id = "svg";
         svg.style.zIndex = 99;
+        svg.style.top = 0 + 'px';
         document.body.insertBefore(svg, document.getElementById("firstElement"));
 
         document.body.onmousemove = function(e) {
@@ -120,23 +122,23 @@ function loop(s) {
                 }
                 else if(step < 1500)
                 {
-                    lineWidth = 7;
+                    lineWidth = 8;
                 }
                 else if(step < 2000)
                 {
-                    lineWidth = 8;
+                    lineWidth = 10;
                 }
                 else if(step < 5000)
                 {
-                    lineWidth = 7;
+                    lineWidth = 9;
                 }
                 else if(step < 5100)
                 {
-                    lineWidth = 6;
+                    lineWidth = 7;
                 }
                 else if(step < 5200)
                 {
-                    lineWidth = 5;
+                    lineWidth = 6;
                 }
                 else if(step < 5300)
                 {
@@ -198,6 +200,22 @@ function loop(s) {
                 line.setAttribute('stroke', "rgb(255,210,30)");
                 line.setAttribute('stroke-width', lineWidth);
                 document.getElementById("svg").appendChild(line);
+
+
+
+
+                var bimg = document.createElement('img');
+                bimg.src = 'https://openclipart.org/image/800px/svg_to_png/224719/circle.png';
+                bimg.width = 25 + (lineWidth * 2);
+                document.body.appendChild(bimg);
+                bimg.style.display = 'block';
+                bimg.style.position = 'absolute';
+                bimg.style.opacity = 0.1;
+                bimg.style.left = x - (25 + (lineWidth * 2))/2 + $(window).scrollLeft() + 'px';
+                bimg.style.top = y - (25 + (lineWidth * 2))/4 + $(window).scrollTop() + 'px';
+                setTimeout(function(){
+                    bimg.remove();
+                }, 2000)
 
             }
             else if (mouseDown == 0)
