@@ -57,7 +57,7 @@ function loop(s) {
         var y;
         var img = document.createElement('img');
         img.src = 'images/undineship.png';
-        img.width = 100;
+        img.width = 200;
         document.body.appendChild(img);
         var snowball = document.getElementById("snowballAppear");
         img.style.display = 'block';
@@ -71,7 +71,7 @@ function loop(s) {
             y = e.clientY;
         };
 
-        var id = setInterval(frame, 1);
+        var id = setInterval(frame, 5);
         var prevTime;
 
         function frame()
@@ -84,64 +84,45 @@ function loop(s) {
             var speed = 5;
             var xMove = 0.0;
             var yMove = 0.0;
-            var xDistance = x - trimString(img.style.left) -50;
-            var yDistance = y - trimString(img.style.top) -100;
+            var xNeg;
+            var yNeg;
+            var xDistance = (x + $(window).scrollLeft()) - parseInt(trimString(img.style.left), 10) - 100 ;
+            var yDistance = (y + $(window).scrollTop()) - parseInt(trimString(img.style.top), 10) - 100 ;
+            if(xDistance > 0)
+            {
+                xNeg = 1;
+            }
+            else
+            {
+                xNeg = -1;
+            }
+           if(yDistance > 0)
+            {
+                yNeg = 1;
+            }
+            else
+            {
+                yNeg = -1;
+            }
+            xDistance = Math.abs(xDistance);
+            yDistance = Math.abs(yDistance);
             var xRatio = (100/(xDistance+yDistance))*xDistance;
             var yRatio = (100/(yDistance+xDistance))*yDistance;
 
-            if(xDistance > 0)
-            {
-                var d = new Date();
-                xMove = ((((d.getTime() - prevTime)/1000) * speed) * xRatio) +  parseInt(trimString(img.style.left), 10);
-                if(xMove > x)
-                {
-                    xMove = x;
-                }
-            }
-            else if(xDistance < 0)
-            {
-                var d = new Date();
+            var angle = Math.atan2((y + $(window).scrollTop()) - (parseInt(trimString(img.style.top)) + 100), (x + $(window).scrollLeft()) - (parseInt(trimString(img.style.left)) + 100));
+            angle = angle * (180/Math.PI) + 90;
 
-                xMove = ((((d.getTime() - prevTime)/1000) * speed) * -xRatio) + parseInt(trimString(img.style.left),10);
-                if(xMove < x)
-                {
-                    xMove = x;
-                }
-
-            }
-            else
+            var d = new Date();
+            if(!(parseInt(trimString(img.style.left), 10) + 100 == (x + $(window).scrollLeft()) && parseInt(trimString(img.style.top), 10) + 100 ==  (y + $(window).scrollTop())))
             {
-                xMove = x;
+                img.style.transform = "rotate(" + angle + "deg)";
             }
 
-            if(yDistance > 0)
-            {
-                var d = new Date();
+            console.log(xNeg + " : " + yNeg);
 
-                yMove = ((((d.getTime() - prevTime)/1000) * speed) * yRatio) +  parseInt(trimString(img.style.top), 10);
-                if(yMove > y)
-                {
-                    yMove = y;
-                }
-            }
-            else if(yDistance < 0)
-            {
-                var d = new Date();
+            img.style.left =  parseInt(trimString(img.style.left), 10) + ((((d.getTime() - prevTime)/1000) * speed) * xRatio) * xNeg  + 'px';
+            img.style.top =  parseInt(trimString(img.style.top), 10) + ((((d.getTime() - prevTime)/1000) * speed) * yRatio) * yNeg + 'px';
 
-                yMove = ((((d.getTime() - prevTime)/1000) * speed) * -yRatio) +  parseInt(trimString(img.style.top), 10);
-                if(yMove < y)
-                {
-                    yMove = y;
-                }
-
-            }
-            else
-            {
-                yMove = y;
-            }
-
-            img.style.left =  xMove + $(window).scrollLeft() +  'px';
-            img.style.top =  yMove  + $(window).scrollTop() +  'px';
 
             prevTime = new Date();
             prevTime = prevTime.getTime();
