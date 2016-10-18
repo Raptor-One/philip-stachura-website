@@ -1,14 +1,14 @@
 function placeInRadial(img, rotationOffset)
 {
 
-    var r = convertToRotation(0 + rotationOffset);
+    var r = convertToRotation(0 + rotationOffset - 90);
 
    var id = setInterval(frame, 100);
    function frame(){
-        var coords = radialPoint(r , {x:174.5, y:91}, 110);
+        var coords = radialPoint(r , {x:169.5, y:90}, 110);
         img.style.left = coords.x + 'px';
         img.style.top = coords.y + 'px';
-        r += convertToRotation(10);
+       // r += convertToRotation(10);
     }
 
     function convertToRotation(r)
