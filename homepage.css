@@ -134,11 +134,11 @@ p {
 }
 
 .radialleft {
-    padding-right: 7px;
+    margin-right: 7px;
 }
 
 .radialright {
-    padding-left: 7px;
+    margin-left: 7px;
 }
 
 .radialcenter {
@@ -146,6 +146,7 @@ p {
 }
 
 .radialbox {
+    width: 414px;
     height: 255px;
 }
 
