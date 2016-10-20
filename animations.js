@@ -51,8 +51,14 @@ $(document).ready(function(){
     $('#radprsofttd').mouseenter(function() {
         showSoftRadial();
     });
+    $('#radprsofttd').mouseleave(function() {
+        hideSoftRadial();
+    });
     $('#radprwebtd').mouseenter(function() {
         showWebRadial();
+    });
+    $('#radprwebtd').mouseleave(function() {
+        hideWebRadial();
     });
 
 });
@@ -74,13 +80,28 @@ var prWebAnimationRunning = {value: 0};
 
 function showSoftRadial()
 {
-    showRadial(document.getElementById("radprsoftimg"), undefined, prSoftAnimationRunning);
+    var otherElems = [document.getElementById("radprsoftmod1"),document.getElementById("radprsoftmod2"),document.getElementById("radprsoftmod3"),document.getElementById("radprsoftmod4") ]
+    showRadial(document.getElementById("radprsoftimg"), otherElems, prSoftAnimationRunning);
 }
 
 function showWebRadial()
 {
-    showRadial(document.getElementById("radprwebimg"), undefined, prWebAnimationRunning);
+    var otherElems = [document.getElementById("radprwebmod1"),document.getElementById("radprwebmod2"),document.getElementById("radprwebmod3")]
+    showRadial(document.getElementById("radprwebimg"), otherElems, prWebAnimationRunning);
 }
+
+function hideSoftRadial()
+{
+    var otherElems = [document.getElementById("radprsoftmod1"),document.getElementById("radprsoftmod2"),document.getElementById("radprsoftmod3"),document.getElementById("radprsoftmod4") ]
+    hideRadial(document.getElementById("radprsoftimg"), otherElems, prSoftAnimationRunning);
+}
+
+function hideWebRadial()
+{
+    var otherElems = [document.getElementById("radprwebmod1"),document.getElementById("radprwebmod2"),document.getElementById("radprwebmod3")]
+    hideRadial(document.getElementById("radprwebimg"), otherElems, prWebAnimationRunning);
+}
+
 
 function expandTech(elem) {
 
@@ -185,8 +206,46 @@ function showRadial(elem, otherElems, idLookup)
     var functions = [
     function(element, current){
         element.width  = current;
+    }];
+
+    for(var i=0; i<otherElems.length; i++)
+    {
+        console.log(i);
+        elements.push(otherElems[i]);
+        starting.push($( otherElems[i] ).css("opacity")*100);
+        goal.push(100);
+        functions.push(function(element, current){
+           element.style.opacity  = current/100;
+        });
     }
-    ];
+
+    animate(elements, starting, goal, 5, 3, functions, idLookup);
+
+}
+
+function hideRadial(elem, otherElems, idLookup)
+{
+    var elements = [elem
+        ];
+    var starting = [$( elem ).width()
+        ];
+    var goal = [225
+        ];
+    var functions = [
+    function(element, current){
+        element.width  = current;
+    }];
+
+    for(var i=0; i<otherElems.length; i++)
+    {
+        console.log(i);
+        elements.push(otherElems[i]);
+        starting.push($( otherElems[i] ).css("opacity")*100);
+        goal.push(0);
+        functions.push(function(element, current){
+           element.style.opacity  = current/100;
+        });
+    }
 
     animate(elements, starting, goal, 5, 3, functions, idLookup);
 
