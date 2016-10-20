@@ -2,17 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="HandheldFriendly" content="true" />
-    <meta name="MobileOptimized" content="970" />
+    <meta name=viewport width=device-width, initial-scale=1>
     <title>Philip Stachura</title>
     <link rel="stylesheet" type="text/css" href="homepage.css">
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-    <script src="animations.js"></script>
+
     <script src="radials.js"></script>
-    <script src="secret.js"></script>
+
 </head>
 <body>
 
@@ -193,6 +188,27 @@
         <br/>
 
     </div>
+    <script type="text/javascript">
+        function downloadJSAtOnload() {
+            var element = document.createElement("script");
+            element.src = "https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js";
+            document.body.appendChild(element);
+            var element = document.createElement("script");
+            element.src = "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js";
+            document.body.appendChild(element);
+            var element = document.createElement("script");
+            element.src = "animations.js";
+            document.body.appendChild(element);
+            var element = document.createElement("script");
+            element.src = "secret.js";
+            document.body.appendChild(element);
+        }
+        if (window.addEventListener)
+            window.addEventListener("load", downloadJSAtOnload, false);
+        else if (window.attachEvent)
+            window.attachEvent("onload", downloadJSAtOnload);
+        else window.onload = downloadJSAtOnload;
+    </script>
 
 </body>
 </html>
