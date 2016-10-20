@@ -34,6 +34,7 @@ document.addEventListener('keydown', function(e) {
         script.src = '.secret/easter eggs.js';
         document.head.appendChild(script);
         alert("cheats enabled");
+        console.warn("Cheats my not be compatible with all browsers: Chrome recommended");
     }
 
   } else
