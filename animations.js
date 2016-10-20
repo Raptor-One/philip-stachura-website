@@ -210,12 +210,18 @@ function showRadial(elem, otherElems, idLookup)
 
     for(var i=0; i<otherElems.length; i++)
     {
-        console.log(i);
         elements.push(otherElems[i]);
         starting.push($( otherElems[i] ).css("opacity")*100);
         goal.push(100);
         functions.push(function(element, current){
            element.style.opacity  = current/100;
+        });
+
+        elements.push(otherElems[i]);
+        starting.push(otherElems[i].radialDistance);
+        goal.push(110);
+        functions.push(function(element, current){
+            placeInRadial(element, element.radialRotation, current );
         });
     }
 
@@ -238,12 +244,18 @@ function hideRadial(elem, otherElems, idLookup)
 
     for(var i=0; i<otherElems.length; i++)
     {
-        console.log(i);
         elements.push(otherElems[i]);
         starting.push($( otherElems[i] ).css("opacity")*100);
         goal.push(0);
         functions.push(function(element, current){
            element.style.opacity  = current/100;
+        });
+
+        elements.push(otherElems[i]);
+        starting.push(otherElems[i].radialDistance);
+        goal.push(90);
+        functions.push(function(element, current){
+            placeInRadial(element, element.radialRotation, current );
         });
     }
 
