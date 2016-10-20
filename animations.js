@@ -47,6 +47,13 @@ $(document).ready(function(){
     $('#expdlso').mouseleave(function() {
         hideImage();
     });
+// Projects
+    $('#radprsofttd').mouseenter(function() {
+        showSoftRadial();
+    });
+    $('#radprwebtd').mouseenter(function() {
+        showWebRadial();
+    });
 
 });
 $('#poj').mouseleave(function(event) {
@@ -61,7 +68,19 @@ var inTechAnimationRunning = {value: 0 };
 var inSportSubAnimationRunning = {value: 0 };
 var inSportAnimationRunning = {value: 0 };
 var inSocialAnimationRunning = {value: 0 };
+var prSoftAnimationRunning = {value: 0};
+var prWebAnimationRunning = {value: 0};
 
+
+function showSoftRadial()
+{
+    showRadial(document.getElementById("radprsoftimg"), undefined, prSoftAnimationRunning);
+}
+
+function showWebRadial()
+{
+    showRadial(document.getElementById("radprwebimg"), undefined, prWebAnimationRunning);
+}
 
 function expandTech(elem) {
 
@@ -152,6 +171,24 @@ function showSocial(elem) {
 	}
 
 	showImage(elem.getElementsByClassName("switchimg")[0], otherElems, inSocialAnimationRunning);
+
+}
+
+function showRadial(elem, otherElems, idLookup)
+{
+    var elements = [elem
+        ];
+    var starting = [$( elem ).width()
+        ];
+    var goal = [160
+        ];
+    var functions = [
+    function(element, current){
+        element.width  = current;
+    }
+    ];
+
+    animate(elements, starting, goal, 5, 3, functions, idLookup);
 
 }
 
