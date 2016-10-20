@@ -11,6 +11,7 @@
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script src="animations.js"></script>
+    <script src="radials.js"></script>
     <script src="secret.js"></script>
 </head>
 <body>
@@ -52,73 +53,34 @@
 
             <div class="subdiv">
                 <h1 class="subheader">Projects</h1>
-                <table>
+                <table class="maintable">
                     <tr>
-                        <td>
-                            <img class="scrollimg" src="images/arrow-left.png">
-                        </td>
-                        <td>
-                            <img class="gradient left" src="images/gr-left.png">
-                            <img class="gradient right" src="images/gr-right.png">
-                            <div class="scrollable">
-                            <div class="scrollablepane">
-                                <table class="maintable scrolltable">
-                                    <tr>
-                                        <td>
-                                            <h2>Web Programming</h2>
+                        <td id="radprsofttd" class="half left">
+                            <h2>Software Programming</h2>
+                            <div class="radialdiv radialleft">
+                                <img id="radprsoftmod3" onload="placeInRadial(this, -67.5, 90)" width="75px" style="position:absolute;"src="images/plugicon.png">
+                                <img id="radprsoftmod2" onload="placeInRadial(this, -22.5, 90)" width="75px" style="position:absolute;"src="images/ppicon.png">
+                                <img id="radprsoftmod1" onload="placeInRadial(this, 22.2, 90)" width="75px" style="position:absolute;"src="images/cubeicon.png">
+                                <img id="radprsoftmod4" onload="placeInRadial(this, 67.5, 90)" width="75px" style="position:absolute;"src="images/chessicon.png">
 
-                                            <table align="left" class="subtable half" id="expdlprweb">
-                                                <tr id="expdlprwebtr1">
-                                                    <td id="expdlprweb1">
-                                                        <h3>BSC Website</h3>
-                                                        <img width="125px" src="images/404icon.png">
-                                                    </td>
-                                                    <td id="expdlprweb2">
-                                                        <h3>Coding Club</h3>
-                                                        <img width="125px" src="images/404icon.png">
-                                                    </td>
-                                                    <td id="expdlprweb3">
-                                                        <h3>This Webpage</h3>
-                                                        <img width="125px" src="images/404icon.png">
-                                                    </td>
-                                                </tr>
-                                            </table>
-                                        </td>
-                                        <td>
-                                            <h2>Software Programming</h2>
-
-                                            <table align="right" class="subtable two-thirds" id="expdlprsoft">
-                                                <tr id="expdlprsofttr">
-                                                    <td id="expdlprsoft1">
-                                                        <h3>Game Plugins</h3>
-                                                        <img width="125px" src="images/404icon.png">
-                                                    </td>
-                                                    <td id="expdlprsoft2">
-                                                        <h3>Personal Panel</h3>
-                                                        <img width="125px" src="images/404icon.png">
-                                                    </td>
-                                                    <td id="expdlprsoft3">
-                                                        <h3>3D Programming</h3>
-                                                        <img width="125px" src="images/404icon.png">
-                                                    </td>
-                                                    <td id="expdlprsoft4">
-                                                        <h3>Tri-D Chess</h3>
-                                                        <img width="125px" src="images/404icon.png">
-                                                    </td>
-                                                </tr>
-                                            </table>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td><hr id="expdlprsofthr"></td>
-                                        <td><hr id="expdlprwebhr"></td>
-                                    </tr>
-                                </table>
                             </div>
+                            <div class="radialbox radialleft">
+                                <span class="radialhelper"></span>
+                                <img id="radprsoftimg" width="225px" class="radialcenter" src="images/softpricon.png">
                             </div>
                         </td>
-                        <td>
-                            <img class="scrollimg" src="images/arrow-right.png">
+                        <td id="radprwebtd" class="half right">
+                            <h2>Web Programming</h2>
+                            <div class="radialdiv radialright">
+                                <img id="radprwebmod3" onload="placeInRadial(this, -45, 90)" width="75px" style="position:absolute;"src="images/bscicon.png">
+                                <img id="radprwebmod1" onload="placeInRadial(this, 0, 90)" width="75px" style="position:absolute;"src="images/cclubicon.png">
+                                <img id="radprwebmod2" onload="placeInRadial(this, 45, 90)" width="75px" style="position:absolute;"src="images/usericon.png">
+
+                            </div>
+                            <div class="radialbox radialright">
+                                <span class="radialhelper"></span>
+                                <img id="radprwebimg" width="225px" class="radialcenter" src="images/webpricon.png">
+                            </div>
                         </td>
                     </tr>
                 </table>
@@ -132,7 +94,7 @@
 
             <div class="subdiv">
                 <h1 class="subheader">Interests</h1>
-                <table  class="maintable">
+                <table class="maintable">
                     <tr>
                         <td>
                             <h2>Technology</h2>
