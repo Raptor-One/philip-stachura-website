@@ -1,12 +1,13 @@
-function placeInRadial(img, rotationOffset)
+function placeInRadial(img, rotationOffset, distance)
 {
 
     var r = rotationOffset - 90;
-    var coords = radialPoint(r , {x:169.5, y:90}, 110);
+    var coords = radialPoint(r , {x:169.5, y:90}, distance);
     img.style.left = coords.x + 'px';
     img.style.top = coords.y + 'px';
 
-    img.distance = 110;
+    img.radialDistance = distance;
+    img.radialRotation = rotationOffset;
 
 }
 
