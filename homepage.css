@@ -162,6 +162,19 @@ p {
     opacity:0;
 }
 
+#warndiv {
+
+    background-color: #FFF5C2;
+    width:960px;
+    position: relative;
+}
+
+#warndiv p {
+
+    color: #E8A400;
+    padding-top: 9px;
+}
+
 #expdlso {
 
     margin-left: 235px;
