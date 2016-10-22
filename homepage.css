@@ -159,7 +159,7 @@ p {
 }
 
 .radialdiv img {
-
+    position: absolute;
     opacity:0;
 }
 
