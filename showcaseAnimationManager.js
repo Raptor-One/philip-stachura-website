@@ -1,5 +1,6 @@
 
 
+
 function expandTech(elem) {
 
     var otherElems = [document.getElementById("expdlintech1"), document.getElementById("expdlintech2"), document.getElementById("expdlintech3")];
@@ -20,6 +21,67 @@ function shrinkTech() {
     var otherElems = [document.getElementById("expdlintech1"), document.getElementById("expdlintech2"), document.getElementById("expdlintech3")];
 
     shrink(otherElems, inTechSubAnimationRunning);
+}
+
+function showLineTech() {
+
+	var elemLine = [document.getElementById("expdlintechhr"), document.getElementById("expdlintechtr")];
+
+	showLine(elemLine, inTechAnimationRunning);
+}
+
+function hideLineTech() {
+
+	var elemLine = [document.getElementById("expdlintechhr"), document.getElementById("expdlintechtr")];
+
+	hideLine(elemLine, inTechAnimationRunning);
+}
+
+
+function showLineSport() {
+
+	var elemLine = [document.getElementById("expdlinsporthr"), document.getElementById("expdlinsporttr")];
+
+	showLine(elemLine, inSportAnimationRunning);
+}
+
+function hideLineSport() {
+
+	var elemLine = [document.getElementById("expdlinsporthr"), document.getElementById("expdlinsporttr")];
+
+	hideLine(elemLine, inSportAnimationRunning);
+}
+
+
+
+function showLine(elemLine, idLookup) {
+	var lineStart = [$( elemLine[0] ).width() / $(elemLine[0]).parent().width() * 100, $( elemLine[1] ).height()];
+	var lineGoal = [90, 220]
+	var functions = [function(element, current){
+    	    element.style.width = current + '%';
+    	    },function(element, current){
+                element.style.height = current + 'px';
+            }];
+    elemLine[0].style.display = "block";
+	animate(elemLine, lineStart, lineGoal, 5, 5,  functions, idLookup);
+
+}
+
+function hideLine(elemLine, idLookup) {
+
+	var lineStart = [$( elemLine[0] ).width() / $(elemLine[0]).parent().width() * 100, $( elemLine[1] ).height()];
+	var lineGoal = [0, 195]
+	var functions = [function(element, current){
+    	    element.style.width = current + '%';
+    	    },function(element, current){
+                 element.style.height = current + 'px';
+             }];
+
+	animate(elemLine, lineStart, lineGoal, 5, 5,  functions, idLookup);
+	setTimeout(function () {
+        elemLine[0].style.display = "none";
+        },(100/5)*5);
+
 }
 
 
