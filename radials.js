@@ -6,8 +6,8 @@ function placeInRadial(img, rotationOffset, distance)
     img.style.left = coords.x + 'px';
     img.style.top = coords.y + 'px';
 
-    img.radialDistance = distance;
-    img.radialRotation = rotationOffset;
+    img.setAttribute("radial-distance", distance);
+    img.setAttribute("radial-rotation", rotationOffset);
 
 }
 

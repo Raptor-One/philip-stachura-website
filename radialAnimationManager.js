@@ -75,10 +75,10 @@ function animateRadial(elements, starting, goal, functions, idLookup, otherElems
         });
 
         elements.push(otherElems[i]);
-        starting.push(otherElems[i].radialDistance);
+        starting.push(parseInt(otherElems[i].getAttribute("radial-distance")));
         goal.push(distGoal);
         functions.push(function(element, current){
-            placeInRadial(element, element.radialRotation, current );
+            placeInRadial(element, parseInt(element.getAttribute("radial-rotation")), current );
         });
     }
 
