@@ -60,11 +60,70 @@ $(document).ready(function(){
     $('#radprwebtd').mouseleave(function() {
         hideWebRadial();
     });
+// Projects - Web Modules
+    $('#radprwebmod1').mouseenter(function() {
+        if(webExpanded.value)
+        {
+            focusRadial(this, webElems, prWebAnimationRadialRunning);
+        }
+    });
+    $('#radprwebmod2').mouseenter(function() {
+        if(webExpanded.value)
+        {
+            focusRadial(this, webElems, prWebAnimationRadialRunning);
+        }
+    });
+    $('#radprwebmod3').mouseenter(function() {
+        if(webExpanded.value)
+        {
+            focusRadial(this, webElems, prWebAnimationRadialRunning);
+        }
+    });
+    $('#radprwebmod1').mouseleave(function() {
+        unfocusRadials(webElems, prWebAnimationRadialRunning);
+    });
+    $('#radprwebmod2').mouseleave(function() {
+        unfocusRadials(webElems, prWebAnimationRadialRunning);
+    });
+    $('#radprwebmod3').mouseleave(function() {
+        unfocusRadials(webElems, prWebAnimationRadialRunning);
+    });
+// Projects - Web Modules
+    $('#radprsoftmod1').mouseenter(function() {
+        if(softExpanded.value)
+        {
+            focusRadial(this, softElems, prSoftAnimationRadialRunning);
+        }
+    });
+    $('#radprsoftmod2').mouseenter(function() {
+        if(softExpanded.value)
+        {
+            focusRadial(this, softElems, prSoftAnimationRadialRunning);
+        }
+    });
+    $('#radprsoftmod3').mouseenter(function() {
+        if(softExpanded.value)
+        {
+            focusRadial(this, softElems, prSoftAnimationRadialRunning);
+        }
+    });
+    $('#radprsoftmod4').mouseenter(function() {
+        if(softExpanded.value)
+        {
+            focusRadial(this, softElems, prSoftAnimationRadialRunning);
+        }
+    });
+    $('#radprsoftmod1').mouseleave(function() {
+        unfocusRadials(softElems, prSoftAnimationRadialRunning);
+    });
+    $('#radprsoftmod2').mouseleave(function() {
+        unfocusRadials(softElems, prSoftAnimationRadialRunning);
+    });
+    $('#radprsoftmod3').mouseleave(function() {
+        unfocusRadials(softElems, prSoftAnimationRadialRunning);
+    });
+    $('#radprsoftmod4').mouseleave(function() {
+        unfocusRadials(softElems, prSoftAnimationRadialRunning);
+    });
 
-});
-$('#poj').mouseleave(function(event) {
-	shrink(this);
-});
-$('#poj').mouseenter(function(event) {
-	expand(this);
 });

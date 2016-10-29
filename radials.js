@@ -2,9 +2,9 @@ function placeInRadial(img, rotationOffset, distance)
 {
 
     var r = rotationOffset - 90;
-    var coords = radialPoint(r , {x:169.5, y:90}, distance);
-    img.style.left = coords.x + 'px';
-    img.style.top = coords.y + 'px';
+    var coords = radialPoint(r , {x:207, y:127.5}, distance);
+    img.style.left = coords.x - (img.width/2) + 'px';
+    img.style.top = coords.y - (img.height/2) + 'px';
 
     img.setAttribute("radial-distance", distance);
     img.setAttribute("radial-rotation", rotationOffset);

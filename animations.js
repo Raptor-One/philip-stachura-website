@@ -5,7 +5,9 @@ var inSportSubAnimationRunning = {value: 0 };
 var inSportAnimationRunning = {value: 0 };
 var inSocialAnimationRunning = {value: 0 };
 var prSoftAnimationRunning = {value: 0};
+var prSoftAnimationRadialRunning = {value: 0};
 var prWebAnimationRunning = {value: 0};
+var prWebAnimationRadialRunning = {value: 0};
 
 
 function animate(elements, start, end, update, speed, functions, idLookup)
