@@ -1,8 +1,3 @@
-
-
-
-
-
 function showImage(elem, otherElems, idLookup)
 {
     var elements = [elem, otherElems[0], otherElems[1],
