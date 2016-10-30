@@ -52,7 +52,7 @@ function focusRadial(elem, otherElemsTemp, idLookup)
     },
     function(element, current){
         element.style.top = document.getElementById(element.parentElement.getAttribute("focus-background-img")).offsetTop + 55 + "px";
-        element.width = $(document.getElementById("radprwebimg")).width();
+        element.width = $(document.getElementById(element.parentElement.getAttribute("focus-background-img"))).width();
         element.style.opacity  = current/100;
     }];
 
@@ -92,7 +92,7 @@ function focusRadial(elem, otherElemsTemp, idLookup)
             functions.push(
                 function (element, current) {
                     element.style.top = document.getElementById(element.parentElement.getAttribute("focus-background-img")).offsetTop + 55 + "px";
-                    element.width = $(document.getElementById("radprwebimg")).width();
+                    element.width = $(document.getElementById(element.parentElement.getAttribute("focus-background-img"))).width();
                     element.style.opacity = current / 100;
                 });
         }
@@ -137,7 +137,7 @@ function unfocusRadials(otherElems, idLookup)
             functions.push(
                 function (element, current) {
                     element.style.top = document.getElementById(element.parentElement.getAttribute("focus-background-img")).offsetTop + 55 + "px";
-                    element.width = $(document.getElementById("radprwebimg")).width();
+                    element.width = $(document.getElementById(element.parentElement.getAttribute("focus-background-img"))).width();
                     element.style.opacity = current / 100;
                 });
         }
