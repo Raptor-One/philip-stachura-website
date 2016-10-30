@@ -63,7 +63,7 @@ function showLine(elemLine, idLookup) {
                 element.style.height = current + 'px';
             }];
     elemLine[0].style.display = "block";
-	animate(elemLine, lineStart, lineGoal, 5, 5,  functions, idLookup);
+	animate(elemLine, lineStart, lineGoal, 15, 15,  functions, idLookup);
 
 }
 
@@ -77,7 +77,7 @@ function hideLine(elemLine, idLookup) {
                  element.style.height = current + 'px';
              }];
 
-	animate(elemLine, lineStart, lineGoal, 5, 5,  functions, idLookup);
+	animate(elemLine, lineStart, lineGoal, 15, 15,  functions, idLookup);
 	setTimeout(function () {
         elemLine[0].style.display = "none";
         },(100/5)*5);
@@ -141,7 +141,7 @@ function expand(elem, otherElems, idLookup)
         element.style.width = current + 'px';
     }];
 
-    animate(elements, starting, goal, 5, 3, functions, idLookup);
+    animate(elements, starting, goal, 30, 18, functions, idLookup);
 
 }
 
@@ -176,6 +176,6 @@ function shrink(otherElems, idLookup)
         element.style.width = current + 'px';
     }];
 
-    animate(elements, starting, goal, 5, 3, functions, idLookup);
+    animate(elements, starting, goal, 30, 18, functions, idLookup);
 
 }

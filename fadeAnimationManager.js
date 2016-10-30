@@ -17,7 +17,7 @@ function showImage(elem, otherElems, idLookup)
         element.style.opacity  = current/100;
     }];
 
-    animate(elements, starting, goal, 5, 3, functions, idLookup);
+    animate(elements, starting, goal, 30, 18, functions, idLookup);
 
 }
 
@@ -40,7 +40,7 @@ function hideImage()
         element.style.opacity  = current/100;
     }];
 
-    animate(elements, starting, goal, 5, 2.5, functions, inSocialAnimationRunning);
+    animate(elements, starting, goal, 30, 16, functions, inSocialAnimationRunning);
 
 }
 

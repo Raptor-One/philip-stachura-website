@@ -77,7 +77,7 @@ function focusRadial(elem, otherElemsTemp, idLookup)
 
     }
 
-    animate(elements, starting, goal, 5, 3, functions, idLookup);
+    animate(elements, starting, goal, 15, 9, functions, idLookup);
 
 }
 
@@ -107,7 +107,7 @@ function unfocusRadials(otherElems, idLookup)
 
     }
 
-    animate(elements, starting, goal, 5, 3, functions, idLookup);
+    animate(elements, starting, goal, 15, 9, functions, idLookup);
 
 }
 
@@ -169,6 +169,6 @@ function animateRadial(elements, starting, goal, functions, idLookup, otherElems
         });
     }
 
-    animate(elements, starting, goal, 5, 3, functions, idLookup);
+    animate(elements, starting, goal, 30, 18, functions, idLookup);
 
 }
