@@ -35,12 +35,13 @@ function focusRadial(elem, otherElemsTemp, idLookup)
 {
 
     var otherElems = otherElemsTemp.slice(0);
+    var focusElem = document.getElementById(elem.getAttribute("focus-img"));
 
-    var elements = [elem, elem
+    var elements = [elem, elem, focusElem
         ];
-    var starting = [$( elem ).width(), parseInt(elem.getAttribute("radial-distance"))
+    var starting = [$( elem ).width(), parseInt(elem.getAttribute("radial-distance")), $(focusElem).css("opacity")*100
         ];
-    var goal = [95, 130
+    var goal = [95, 130, 100
         ];
     var functions = [
     function(element, current){
@@ -48,6 +49,11 @@ function focusRadial(elem, otherElemsTemp, idLookup)
     },
     function(element, current){
         placeInRadial(element, parseInt(element.getAttribute("radial-rotation")), current );
+    },
+    function(element, current){
+        element.style.top = document.getElementById(element.parentElement.getAttribute("focus-background-img")).offsetTop + 55 + "px";
+        element.width = $(document.getElementById("radprwebimg")).width();
+        element.style.opacity  = current/100;
     }];
 
     for(var i=0; i<otherElems.length; i++) {
@@ -77,7 +83,22 @@ function focusRadial(elem, otherElemsTemp, idLookup)
 
     }
 
-    animate(elements, starting, goal, 15, 9, functions, idLookup);
+    var focusImgs = document.getElementById(otherElems[0].getAttribute("focus-img")).parentElement.children;
+    for(var i=0; i<focusImgs.length; i++) {
+        if(focusImgs[i].classList.contains("focusImg") && focusImgs[i].id != focusElem.id) {
+            elements.push(focusImgs[i]);
+            starting.push($(focusImgs[i]).css("opacity") * 100);
+            goal.push(0);
+            functions.push(
+                function (element, current) {
+                    element.style.top = document.getElementById(element.parentElement.getAttribute("focus-background-img")).offsetTop + 55 + "px";
+                    element.width = $(document.getElementById("radprwebimg")).width();
+                    element.style.opacity = current / 100;
+                });
+        }
+    }
+
+    animate(elements, starting, goal, 30, 18, functions, idLookup);
 
 }
 
@@ -107,11 +128,23 @@ function unfocusRadials(otherElems, idLookup)
 
     }
 
-    animate(elements, starting, goal, 15, 9, functions, idLookup);
+    var focusImgs = document.getElementById(otherElems[0].getAttribute("focus-img")).parentElement.children;
+    for(var i=0; i<focusImgs.length; i++) {
+        if(focusImgs[i].classList.contains("focusImg")) {
+            elements.push(focusImgs[i]);
+            starting.push($(focusImgs[i]).css("opacity") * 100);
+            goal.push(0);
+            functions.push(
+                function (element, current) {
+                    element.style.top = document.getElementById(element.parentElement.getAttribute("focus-background-img")).offsetTop + 55 + "px";
+                    element.width = $(document.getElementById("radprwebimg")).width();
+                    element.style.opacity = current / 100;
+                });
+        }
+    }
+    animate(elements, starting, goal, 30, 18, functions, idLookup);
 
 }
-
-
 
 function showRadial(elem, otherElems, idLookup, radialExpanded)
 {
@@ -129,7 +162,7 @@ function showRadial(elem, otherElems, idLookup, radialExpanded)
     animateRadial(elements, starting, goal, functions, idLookup, otherElems, 110, 100);
     setTimeout(function () {
         radialExpanded.value = true;
-        },(50/3)*5);
+        },(50/18)*30);
 
 }
 
