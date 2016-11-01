@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  
+    <title>No Title</title>
+  
+  </head>
+  <body>
+   
+    <h1>This is just a test document.</h1>
+  
+  <br/>
+  
+    <p>Still getting familiar to atom</p>
+   
+    <p>Btw look what I can do</p>
+      <button type="button" onclick="document.getElementById('test').innerHTML='Have you seen it yet?'">I dare you to click this...</button>
+  
+  <br/>
+  
+  </body>
+</html>
